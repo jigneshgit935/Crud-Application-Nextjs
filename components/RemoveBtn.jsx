@@ -5,11 +5,11 @@ import { useRouter } from 'next/navigation';
 
 export default function RemoveBtn({ id }) {
   const router = useRouter();
-  const removeTopic = async () => {
+  const deleteProduct = async () => {
     const confirmed = confirm('Are you sure?');
 
     if (confirmed) {
-      const res = await fetch(`/api/topics?id=${id}`, {
+      const res = await fetch(`/api/products?id=${id}`, {
         method: 'DELETE',
       });
 
@@ -20,7 +20,7 @@ export default function RemoveBtn({ id }) {
   };
 
   return (
-    <button onClick={removeTopic} className="text-red-400">
+    <button onClick={deleteProduct} className="text-red-400">
       <HiOutlineTrash size={24} />
     </button>
   );
