@@ -17,7 +17,7 @@ const getProductById = async (id) => {
   }
 };
 
-export default async function EditTopic({ params }) {
+export default async function EditProduct({ params }) {
   const { id } = params;
   const { product } = await getProductById(id);
   const { name, price, color, company, category } = product;

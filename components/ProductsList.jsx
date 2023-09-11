@@ -55,7 +55,7 @@ export default async function ProductsList() {
                   <td>{p.category}</td>
                   <td>
                     <RemoveBtn id={p._id} />
-                    <Link href={`/editTopic/${p._id}`}>
+                    <Link href={`/editProduct/${p._id}`}>
                       <HiPencilAlt size={24} />
                     </Link>
                   </td>
