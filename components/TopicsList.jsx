@@ -2,11 +2,11 @@ import Link from 'next/link';
 import RemoveBtn from './RemoveBtn';
 import { HiPencilAlt } from 'react-icons/hi';
 
-const getTopics = async () => {
+const getProducts = async () => {
   const apiUrl = process.env.API_URL;
 
   try {
-    const res = await fetch(`${apiUrl}/api/topics`, {
+    const res = await fetch(`${apiUrl}/api/products`, {
       cache: 'no-store',
     });
 
@@ -16,28 +16,28 @@ const getTopics = async () => {
 
     return res.json();
   } catch (error) {
-    console.log('Error loading topics: ', error);
+    console.log('Error loading products: ', error);
   }
 };
 
 export default async function TopicsList() {
-  const { topics } = await getTopics();
+  const { products } = await getProducts();
 
   return (
     <>
-      {topics.map((t) => (
+      {products.map((p) => (
         <div
-          key={t._id}
+          key={p._id}
           className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start"
         >
           <div>
-            <h2 className="font-bold text-2xl">{t.title}</h2>
-            <div>{t.description}</div>
+            <h2 className="font-bold text-2xl">{p.name}</h2>
+            <div>{p.color}</div>
           </div>
 
           <div className="flex gap-2">
-            <RemoveBtn id={t._id} />
-            <Link href={`/editTopic/${t._id}`}>
+            <RemoveBtn id={p._id} />
+            <Link href={`/editTopic/${p._id}`}>
               <HiPencilAlt size={24} />
             </Link>
           </div>
