@@ -2,64 +2,89 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import './style.css';
 
 export default function AddTopic() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
+  const [color, setColor] = useState('');
+  const [company, setCompany] = useState('');
+  const [category, setCategory] = useState('');
 
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !description) {
-      alert('Title and description are required.');
+    if (!name || !price || !color || !company || !category) {
+      alert('All Fields are required');
       return;
     }
 
     try {
-      const res = await fetch('/api/topics', {
+      const res = await fetch('/api/products', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
         },
-        body: JSON.stringify({ title, description }),
+        body: JSON.stringify({ name, price, color, company, category }),
       });
-
       if (res.ok) {
         router.push('/');
       } else {
-        throw new Error('Failed to create a topic');
+        alert('Something went wrong');
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Title"
-      />
+    <div className="bgMain">
+      <div className="inputMain">
+        <Link className="linkdesign" href="/">
+          Go Back
+        </Link>
+        <h3 className="heading">Add Products</h3>
 
-      <input
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Description"
-      />
-
-      <button
-        type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
-      >
-        Add Topic
-      </button>
-    </form>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Name"
+        />
+        <input
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Price"
+        />
+        <input
+          value={color}
+          onChange={(e) => setColor(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Color"
+        />
+        <input
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Company"
+        />
+        <input
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Category"
+        />
+        <button onClick={handleSubmit} type="submit" className="buttonStyle">
+          Add Product
+        </button>
+      </div>
+    </div>
   );
 }

@@ -24,8 +24,18 @@ export default async function TopicsList() {
   const { products } = await getProducts();
 
   return (
-    <>
-      <div className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start">
+    <main>
+      <div className="productMainPage">
+        <div className="CrudApp">
+          <h3>Crud Application Nextjs</h3>
+        </div>
+        <div className="alignheadandlink">
+          <h2>Product List</h2>
+
+          <Link className="linkdesign" href="/addTopic">
+            Add Products
+          </Link>
+        </div>
         <table>
           <thead>
             <tr>
@@ -56,6 +66,6 @@ export default async function TopicsList() {
           ))}
         </table>
       </div>
-    </>
+    </main>
   );
 }
