@@ -1,9 +1,9 @@
-import TopicsList from '@/components/TopicsList';
+import ProductsList from '@/components/ProductsList';
 
 export default function Home() {
   return (
     <div>
-      <TopicsList />
+      <ProductsList />
     </div>
   );
 }

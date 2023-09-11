@@ -20,7 +20,7 @@ const getTopics = async () => {
   }
 };
 
-export default async function TopicsList() {
+export default async function ProductsList() {
   const { topics } = await getTopics();
 
   return (
