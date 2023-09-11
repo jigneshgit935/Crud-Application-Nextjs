@@ -32,7 +32,7 @@ export default async function TopicsList() {
         <div className="alignheadandlink">
           <h2>Product List</h2>
 
-          <Link className="linkdesign" href="/addTopic">
+          <Link className="linkdesign" href="/addProduct">
             Add Products
           </Link>
         </div>

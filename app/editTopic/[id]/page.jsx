@@ -1,10 +1,9 @@
 import EditTopicForm from '@/components/EditTopicForm';
 
-const getTopicById = async (id) => {
+const getProductById = async (id) => {
   const apiUrl = process.env.API_URL;
-
   try {
-    const res = await fetch(`${apiUrl}/api/topics/${id}`, {
+    const res = await fetch(`${apiUrl}/api/products/${id}`, {
       cache: 'no-store',
     });
 
@@ -20,8 +19,16 @@ const getTopicById = async (id) => {
 
 export default async function EditTopic({ params }) {
   const { id } = params;
-  const { topic } = await getTopicById(id);
-  const { title, description } = topic;
-
-  return <EditTopicForm id={id} title={title} description={description} />;
+  const { product } = await getProductById(id);
+  const { name, price, color, company, category } = product;
+  return (
+    <EditTopicForm
+      id={id}
+      name={name}
+      price={price}
+      color={color}
+      company={company}
+      category={category}
+    />
+  );
 }

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import './style.css';
 
-export default function AddTopic() {
+export default function AddProduct() {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [color, setColor] = useState('');
@@ -32,6 +32,7 @@ export default function AddTopic() {
       });
       if (res.ok) {
         router.push('/');
+        router.refresh();
       } else {
         alert('Something went wrong');
       }

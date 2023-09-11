@@ -2,27 +2,45 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import '../app/addProduct/style.css';
 
-export default function EditTopicForm({ id, title, description }) {
-  const [newTitle, setNewTitle] = useState(title);
-  const [newDescription, setNewDescription] = useState(description);
+export default function EditTopicForm({
+  id,
+  name,
+  price,
+  color,
+  company,
+  category,
+}) {
+  const [newName, setNewName] = useState(name);
+  const [newPrice, setNewPrice] = useState(price);
+  const [newColor, setNewColor] = useState(color);
+  const [newCompany, setNewCompany] = useState(company);
+  const [newCategory, setNewCategory] = useState(category);
 
   const router = useRouter();
 
-  const handleSubmit = async (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`/api/topics/${id}`, {
+      const res = await fetch(`/api/products/${id}`, {
         method: 'PUT',
         headers: {
           'Content-type': 'application/json',
         },
-        body: JSON.stringify({ newTitle, newDescription }),
+        body: JSON.stringify({
+          newName,
+          newPrice,
+          newColor,
+          newCompany,
+          newCategory,
+        }),
       });
 
       if (!res.ok) {
-        throw new Error('Failed to update topic');
+        alert('Failed to update product');
       }
 
       router.refresh();
@@ -33,26 +51,52 @@ export default function EditTopicForm({ id, title, description }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
-        onChange={(e) => setNewTitle(e.target.value)}
-        value={newTitle}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Title"
-      />
+    <div className="bgMain">
+      <div className="inputMain">
+        <Link className="linkdesign" href="/">
+          Go Back
+        </Link>
+        <h3 className="heading">Edit Products</h3>
+        <input
+          value={newName}
+          onChange={(e) => setNewName(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Name"
+        />
+        <input
+          value={newPrice}
+          onChange={(e) => setNewPrice(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Price"
+        />
+        <input
+          value={newColor}
+          onChange={(e) => setNewColor(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Color"
+        />
+        <input
+          value={newCompany}
+          onChange={(e) => setNewCompany(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Company"
+        />
+        <input
+          value={newCategory}
+          onChange={(e) => setNewCategory(e.target.value)}
+          className="inputStyle"
+          type="text"
+          placeholder="Enter Product Category"
+        />
 
-      <input
-        onChange={(e) => setNewDescription(e.target.value)}
-        value={newDescription}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Description"
-      />
-
-      <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit">
-        Update Topic
-      </button>
-    </form>
+        <button onClick={handleUpdate} className="buttonStyle">
+          Edit Product
+        </button>
+      </div>
+    </div>
   );
 }
