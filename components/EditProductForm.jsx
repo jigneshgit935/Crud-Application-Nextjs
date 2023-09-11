@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import '../app/addProduct/style.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function EditProductForm({
   id,
@@ -18,7 +20,11 @@ export default function EditProductForm({
   const [newColor, setNewColor] = useState(color);
   const [newCompany, setNewCompany] = useState(company);
   const [newCategory, setNewCategory] = useState(category);
-
+  const showToastMessage = () => {
+    toast.success('Product Updated Successfully ', {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
   const router = useRouter();
 
   const handleUpdate = async (e) => {
@@ -40,6 +46,7 @@ export default function EditProductForm({
       });
 
       if (!res.ok) {
+        showToastMessage();
         alert('Failed to update product');
       }
 
@@ -52,6 +59,8 @@ export default function EditProductForm({
 
   return (
     <div className="bgMain">
+      <ToastContainer hideProgressBar={true} />
+
       <div className="inputMain">
         <Link className="linkdesign" href="/">
           Go Back

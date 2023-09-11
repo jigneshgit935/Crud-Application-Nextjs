@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import RemoveBtn from './RemoveBtn';
-import { HiPencilAlt } from 'react-icons/hi';
 
 const getProducts = async () => {
   const apiUrl = process.env.API_URL;
@@ -22,7 +21,6 @@ const getProducts = async () => {
 
 export default async function ProductsList() {
   const { products } = await getProducts();
-
   return (
     <main className="mainDes">
       <div className="productMainPage">

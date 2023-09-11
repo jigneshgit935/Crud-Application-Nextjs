@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './style.css';
 
 export default function AddProduct() {
@@ -11,6 +13,11 @@ export default function AddProduct() {
   const [color, setColor] = useState('');
   const [company, setCompany] = useState('');
   const [category, setCategory] = useState('');
+  const showToastMessage = () => {
+    toast.success('Product Created ', {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
 
   const router = useRouter();
 
@@ -30,7 +37,9 @@ export default function AddProduct() {
         },
         body: JSON.stringify({ name, price, color, company, category }),
       });
+
       if (res.ok) {
+        showToastMessage();
         router.push('/');
         router.refresh();
       } else {
@@ -41,6 +50,7 @@ export default function AddProduct() {
 
   return (
     <div className="bgMain">
+      <ToastContainer hideProgressBar={true} />
       <div className="inputMain">
         <Link className="linkdesign" href="/">
           Go Back
