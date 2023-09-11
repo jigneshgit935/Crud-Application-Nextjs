@@ -27,7 +27,7 @@ export default async function ProductsList() {
     <main>
       <div className="productMainPage">
         <div className="alignheadandlink">
-          <h2>Product List</h2>
+          <h2 className="productTitle">Product List</h2>
 
           <Link className="linkdesign" href="/addProduct">
             Add Products

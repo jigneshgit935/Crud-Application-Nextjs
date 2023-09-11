@@ -74,9 +74,28 @@ table tr:hover {
   font-weight: normal;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 600px) {
   .CrudApp .titleClass {
     text-align: center;
     font-size: 30px;
+  }
+
+  .linkdesign {
+    background-color: #add8e6;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    width: 140px;
+    margin: 5px 0px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+    outline: none;
+    border: none;
+  }
+  .productTitle {
+    font-size: 14px;
   }
 }
