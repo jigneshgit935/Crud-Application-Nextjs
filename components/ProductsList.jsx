@@ -24,7 +24,7 @@ export default async function ProductsList() {
   const { products } = await getProducts();
 
   return (
-    <main>
+    <main className="mainDes">
       <div className="productMainPage">
         <div className="alignheadandlink">
           <h2 className="productTitle">Product List</h2>

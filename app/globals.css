@@ -50,6 +50,7 @@
 
 table {
   border: none;
+  padding: 0px 10px;
   width: 100%;
   border-collapse: collapse;
   overflow-x: scroll;
@@ -118,12 +119,12 @@ table tr:hover {
   table tr th {
     font-size: 16px;
     font-weight: 600;
-    padding: 0px 20px;
+    padding: 0px 16px;
     height: 80px;
     text-align: start;
   }
   table tr td {
-    padding: 0px;
+    padding: 0px 16px;
     font-size: 16px;
   }
 }
