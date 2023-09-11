@@ -75,8 +75,8 @@ table tr:hover {
 }
 
 @media screen and (max-width: 769px) {
-  .CrudApp {
+  .CrudApp .titleClass {
     text-align: center;
-    font-size: 18px;
+    font-size: 30px;
   }
 }
