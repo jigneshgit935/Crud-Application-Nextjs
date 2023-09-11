@@ -25,24 +25,37 @@ export default async function TopicsList() {
 
   return (
     <>
-      {products.map((p) => (
-        <div
-          key={p._id}
-          className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start"
-        >
-          <div>
-            <h2 className="font-bold text-2xl">{p.name}</h2>
-            <div>{p.color}</div>
-          </div>
-
-          <div className="flex gap-2">
-            <RemoveBtn id={p._id} />
-            <Link href={`/editTopic/${p._id}`}>
-              <HiPencilAlt size={24} />
-            </Link>
-          </div>
-        </div>
-      ))}
+      <div className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Color</th>
+              <th>Company</th>
+              <th>Category</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          {products.map((p) => (
+            <tbody key={p._id}>
+              <tr>
+                <td>{p.name}</td>
+                <td>{p.price}</td>
+                <td>{p.color}</td>
+                <td>{p.company}</td>
+                <td>{p.category}</td>
+                <td>
+                  <RemoveBtn id={p._id} />
+                  <Link href={`/editTopic/${p._id}`}>
+                    <HiPencilAlt size={24} />
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
+      </div>
     </>
   );
 }
