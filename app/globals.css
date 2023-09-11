@@ -121,7 +121,7 @@ table tr:hover {
     font-weight: 600;
     padding: 0px 16px;
     height: 80px;
-    text-align: start;
+    text-align: center;
   }
   table tr td {
     padding: 0px 16px;
