@@ -83,13 +83,13 @@ table tr:hover {
   .linkdesign {
     background-color: #add8e6;
     color: white;
-    padding: 8px 20px;
+    padding: 8px 22px;
     text-decoration: none;
     color: black;
     border-radius: 20px;
     width: 140px;
     margin: 5px 0px;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
     font-weight: normal;
     outline: none;
@@ -97,5 +97,13 @@ table tr:hover {
   }
   .productTitle {
     font-size: 14px;
+  }
+  table tr th {
+    font-size: 16px;
+    font-weight: 500;
+    background: #add8e6;
+    padding: 0px 20px;
+    height: 80px;
+    text-align: start;
   }
 }
