@@ -26,9 +26,6 @@ export default async function ProductsList() {
   return (
     <main>
       <div className="productMainPage">
-        <div className="CrudApp">
-          <h3>Crud Application Nextjs</h3>
-        </div>
         <div className="alignheadandlink">
           <h2>Product List</h2>
 
@@ -37,7 +34,7 @@ export default async function ProductsList() {
           </Link>
         </div>
         <div style={{ overflowX: 'auto' }}>
-          <table style={{ border: '1px solid red' }}>
+          <table>
             <thead>
               <tr>
                 <th>Name</th>

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import '../app/addProduct/style.css';
 
-export default function EditTopicForm({
+export default function EditProductForm({
   id,
   name,
   price,

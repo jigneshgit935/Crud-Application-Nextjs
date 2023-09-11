@@ -1,4 +1,4 @@
-import EditTopicForm from '@/components/EditTopicForm';
+import EditProductForm from '@/components/EditProductForm';
 
 const getProductById = async (id) => {
   const apiUrl = process.env.API_URL;
@@ -22,7 +22,7 @@ export default async function EditTopic({ params }) {
   const { product } = await getProductById(id);
   const { name, price, color, company, category } = product;
   return (
-    <EditTopicForm
+    <EditProductForm
       id={id}
       name={name}
       price={price}
