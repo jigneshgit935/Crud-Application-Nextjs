@@ -53,10 +53,20 @@ export default async function ProductsList() {
                   <td>{p.color}</td>
                   <td>{p.company}</td>
                   <td>{p.category}</td>
-                  <td>
+                  <td
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
                     <RemoveBtn id={p._id} />
-                    <Link href={`/editProduct/${p._id}`}>
-                      <HiPencilAlt size={24} />
+                    <Link
+                      className="linkdesignDelete"
+                      href={`/editProduct/${p._id}`}
+                    >
+                      Edit{' '}
                     </Link>
                   </td>
                 </tr>

@@ -17,6 +17,20 @@
   outline: none;
   border: none;
 }
+.linkdesignDelete {
+  background-color: #add8e6;
+  color: white;
+  padding: 8px 0px;
+  text-decoration: none;
+  color: black;
+  border-radius: 20px;
+  width: 90px;
+  margin: 5px 0px;
+  font-size: 16px;
+  font-weight: normal;
+  outline: none;
+  border: none;
+}
 .CrudApp {
   text-align: center;
 }
@@ -44,14 +58,16 @@ table tr th {
   font-size: 20px;
   font-weight: 600;
   padding: 0px 20px;
+
   background: #ededed;
   height: 80px;
-  text-align: start;
+  text-align: center;
 }
 
 table tr td {
   padding: 0px 20px;
   height: 120px;
+  text-align: center;
   border-bottom: 1px solid grey;
 }
 
@@ -75,7 +91,7 @@ table tr:hover {
   font-weight: normal;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 685px) {
   .CrudApp .titleClass {
     text-align: center;
     font-size: 30px;
@@ -101,10 +117,13 @@ table tr:hover {
   }
   table tr th {
     font-size: 16px;
-    font-weight: 500;
-    background: #add8e6;
+    font-weight: 600;
     padding: 0px 20px;
     height: 80px;
     text-align: start;
+  }
+  table tr td {
+    padding: 0px;
+    font-size: 16px;
   }
 }

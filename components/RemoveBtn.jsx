@@ -20,8 +20,8 @@ export default function RemoveBtn({ id }) {
   };
 
   return (
-    <button onClick={deleteProduct} className="text-red-400">
-      <HiOutlineTrash size={24} />
+    <button onClick={deleteProduct} className="linkdesignDelete">
+      Delete
     </button>
   );
 }
