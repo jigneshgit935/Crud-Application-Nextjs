@@ -44,6 +44,7 @@ table tr th {
   font-size: 20px;
   font-weight: 600;
   padding: 0px 20px;
+  background: #ededed;
   height: 80px;
   text-align: start;
 }
@@ -87,7 +88,7 @@ table tr:hover {
     text-decoration: none;
     color: black;
     border-radius: 20px;
-    width: 140px;
+    width: 160px;
     margin: 5px 0px;
     font-size: 16px;
     text-align: center;
