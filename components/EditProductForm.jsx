@@ -47,10 +47,10 @@ export default function EditProductForm({
       });
 
       if (!res.ok) {
-        showToastMessage();
         alert('Failed to update product');
       }
 
+        showToastMessage();
       router.refresh();
       router.push('/');
     } catch (error) {
