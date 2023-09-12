@@ -16,6 +16,7 @@ export default function AddProduct() {
   const showToastMessage = () => {
     toast.success('Product Created ', {
       position: toast.POSITION.TOP_CENTER,
+      className: 'fontsie',
     });
   };
 
@@ -47,10 +48,9 @@ export default function AddProduct() {
       }
     } catch (error) {}
   };
-
   return (
     <div className="bgMain">
-      <ToastContainer hideProgressBar={true} />
+      <ToastContainer hideProgressBar={true} pauseOnHover={false} />
       <div className="inputMain">
         <Link className="linkdesign" href="/">
           Go Back

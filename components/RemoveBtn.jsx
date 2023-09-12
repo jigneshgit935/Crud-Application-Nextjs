@@ -6,8 +6,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function RemoveBtn({ id }) {
   const showToastMessage = () => {
-    toast.success('Product deleted successfully ', {
+    toast.success('Product Deleted!', {
       position: toast.POSITION.TOP_CENTER,
+      className: 'fontsie',
     });
   };
   const router = useRouter();
@@ -24,10 +25,9 @@ export default function RemoveBtn({ id }) {
       }
     }
   };
-
   return (
     <>
-      <ToastContainer hideProgressBar={true} />
+      <ToastContainer hideProgressBar={true} pauseOnHover={false} />
 
       <button onClick={deleteProduct} className="linkdesignDelete">
         Delete

@@ -21,8 +21,9 @@ export default function EditProductForm({
   const [newCompany, setNewCompany] = useState(company);
   const [newCategory, setNewCategory] = useState(category);
   const showToastMessage = () => {
-    toast.success('Product Updated Successfully ', {
+    toast.success('Product Updated!', {
       position: toast.POSITION.TOP_CENTER,
+      className: 'fontsie',
     });
   };
   const router = useRouter();
@@ -59,8 +60,7 @@ export default function EditProductForm({
 
   return (
     <div className="bgMain">
-      <ToastContainer hideProgressBar={true} />
-
+      <ToastContainer hideProgressBar={true} pauseOnHover={false} />
       <div className="inputMain">
         <Link className="linkdesign" href="/">
           Go Back
